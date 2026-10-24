@@ -13,9 +13,9 @@ Astro 7.4.2, salida estática de producción. Lighthouse móvil sobre localhost 
 - Cuatro rutas: metadatos, sitemap, robots, imágenes y enlaces internos correctos.
 - Ocho vistas (390 y 1440 px): sin desbordamientos, imágenes rotas, errores JavaScript ni infracciones automáticas WCAG A/AA detectadas.
 - Filtros: 7 áreas totales, 5 activas y 2 estatutarias; cambio y restauración correctos.
-- Formulario: campos obligatorios y consentimiento; prepara correo y conserva datos, sin simular recepción.
+- Formulario: campos obligatorios y consentimiento; la prueba de navegador simula una respuesta correcta de `/api/contact` y comprueba confirmación y limpieza. La entrega real requiere las variables de Vercel y Resend configuradas.
 - npm audit al instalar las dependencias finales: 0 vulnerabilidades.
 - Capturas y reportes JSON detallados: test-results/ (ignorados por Git).
 - JavaScript de interacción: 1.131 bytes más un módulo de entrada de 35 bytes por página interactiva, antes de compresión.
 
-La comparación visual conserva el diseño de escritorio y adapta los contenidos al móvil; no se afirma equivalencia pixel por pixel. Se ajustaron contraste, jerarquía de encabezados y las acciones simuladas de Stitch. Los PDF oficiales y un backend de correo no forman parte de los recursos recibidos; las acciones usan el correo institucional.
+La comparación visual conserva el diseño de escritorio y adapta los contenidos al móvil; no se afirma equivalencia pixel por pixel. Se ajustaron contraste y jerarquía de encabezados. Los PDF oficiales no forman parte de los recursos recibidos; sus solicitudes usan el correo institucional.

@@ -146,7 +146,7 @@ import Layout from '../layouts/Layout.astro';
 <h3 class="font-headline-sm text-headline-sm text-primary">Ventanilla Única Digital de Radicación</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Diligencie los campos requeridos para canalizar su requerimiento al área veterinaria o administrativa pertinente.</p>
 </div>
-<form class="flex flex-col gap-space-md mt-space-xs" id="contact-institutional-form" action="mailto:fundacionpedrofranco@gmail.com" method="post" enctype="text/plain"><p class="font-body-sm text-body-sm">Este formulario prepara un mensaje en tu aplicación de correo. Revisa su contenido y envíalo desde allí.</p>
+<form class="flex flex-col gap-space-md mt-space-xs" id="contact-institutional-form"><p class="font-body-sm text-body-sm">Tu solicitud se envía directamente al equipo institucional. Recibirás respuesta al correo indicado.</p>
 
 <div class="flex flex-col gap-space-xs">
 <label class="font-label-md text-label-md text-on-surface font-semibold" for="motivo">
@@ -188,10 +188,15 @@ import Layout from '../layouts/Layout.astro';
 <label class="font-body-sm text-body-sm text-on-surface-variant cursor-pointer" for="habeas-data" id="proteccion-datos">Autorizo el uso de mis datos para responder esta solicitud, conforme a la Ley 1581 de 2012.</label>
 </div>
 
+<div class="contact-honeypot" aria-hidden="true">
+<label for="website">No completar este campo</label>
+<input id="website" type="text" name="website" tabindex="-1" autocomplete="off" />
+</div>
+
 <div class="pt-space-sm flex items-center justify-between gap-space-md">
 <button class="inline-flex items-center justify-center gap-space-xs font-label-lg text-label-lg px-space-xl py-3 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-all shadow-[0_2px_8px_rgba(6,41,29,0.15)]" type="submit">
 <span class="material-symbols-outlined text-[20px]" aria-hidden="true">send</span>
-<span class="">Preparar correo</span>
+<span class="">Enviar solicitud</span>
 </button>
 
 </div>

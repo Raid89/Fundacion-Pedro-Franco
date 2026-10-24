@@ -11,13 +11,34 @@ filters.forEach(button => button.addEventListener('click', () => {
   if (status) status.textContent = `${count} áreas de trabajo visibles`;
 }));
 const form = document.querySelector<HTMLFormElement>('#contact-institutional-form');
-form?.addEventListener('submit', event => {
+form?.addEventListener('submit', async event => {
   event.preventDefault();
   if (!form.reportValidity()) return;
   const data = new FormData(form);
-  const subject = String(data.get('motivo') || 'Consulta institucional');
-  const body = `Nombre: ${data.get('nombre')}\nCorreo: ${data.get('correo')}\n\n${data.get('detalles')}\n\nAutorizo el tratamiento de mis datos para responder esta solicitud.`;
-  window.location.href = `mailto:fundacionpedrofranco@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   const status = document.getElementById('contact-status');
-  if (status) status.textContent = 'Mensaje preparado. Completa el envío en tu aplicación de correo. Si no se abrió, escribe a fundacionpedrofranco@gmail.com. Tus datos permanecen en el formulario.';
+  const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+
+  button?.setAttribute('disabled', '');
+  if (status) status.textContent = 'Enviando solicitud…';
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        motivo: data.get('motivo'),
+        nombre: data.get('nombre'),
+        correo: data.get('correo'),
+        detalles: data.get('detalles'),
+        website: data.get('website'),
+      }),
+    });
+    const result = await response.json().catch(() => ({})) as { error?: string; ok?: boolean };
+    if (!response.ok || !result.ok) throw new Error(result.error || 'No fue posible enviar la solicitud.');
+    form.reset();
+    if (status) status.textContent = 'Solicitud enviada correctamente. El equipo institucional responderá al correo indicado.';
+  } catch (error) {
+    if (status) status.textContent = error instanceof Error ? error.message : 'No fue posible enviar la solicitud. Inténtalo nuevamente.';
+  } finally {
+    button?.removeAttribute('disabled');
+  }
 });

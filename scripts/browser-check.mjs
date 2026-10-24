@@ -42,6 +42,7 @@ try {
   if(visible!==2) throw new Error(`Filter expected 2 programs; got ${visible}`);
   await page.getByRole('button',{name:'Todos (7)'}).click();
   if(await page.locator('[data-program]:visible').count()!==7) throw new Error('Filter reset failed');
+  await page.route('**/api/contact', route => route.fulfill({ contentType: 'application/json', body: JSON.stringify({ ok: true }) }));
   await page.goto('http://localhost:4321/proyectos-contacto/');
   await page.locator('button[type=submit]').click();
   if(await page.locator('#contact-status').textContent()) throw new Error('Empty form accepted');
@@ -51,8 +52,9 @@ try {
   await page.locator('#detalles').fill('Comprobación local del formulario.');
   await page.locator('#habeas-data').check();
   await page.locator('button[type=submit]').click();
-  if(!(await page.locator('#contact-status').textContent()).includes('Mensaje preparado')) throw new Error('Contact feedback missing');
-  if(await page.locator('#nombre').inputValue()!=='Prueba local') throw new Error('Form values lost');
+  await page.waitForFunction(() => document.querySelector('#contact-status')?.textContent?.includes('Solicitud enviada correctamente'));
+  if(!(await page.locator('#contact-status').textContent()).includes('Solicitud enviada correctamente')) throw new Error('Contact success feedback missing');
+  if(await page.locator('#nombre').inputValue()!=='') throw new Error('Form values were not cleared after a successful delivery');
   await fs.writeFile('test-results/browser.json',JSON.stringify(results,null,2));
   console.log(JSON.stringify(results.map(({resources,...r})=>({...r,bytes:resources.reduce((a,r)=>a+r.bytes,0)})),null,2));
   if(results.some(r=>r.overflow||r.failedImages||r.errors.length||r.violations.length)) process.exitCode=1;

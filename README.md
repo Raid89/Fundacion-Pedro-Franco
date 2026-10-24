@@ -35,7 +35,7 @@ node scripts/lighthouse.mjs
 
 Las pruebas de navegador usan Chromium en `/usr/bin/chromium`; se puede cambiar con `CHROME_BIN`. Los informes y las capturas se guardan en `test-results/`. El chequeo estático valida las cuatro rutas, metadatos, enlaces y anclas, sitemap, imágenes y recursos locales. Las pruebas de navegador verifican 390 y 1440 px, filtros, validación del formulario, ausencia de desbordamiento y auditoría automática de accesibilidad.
 
-La salida desplegable está en `dist/`. Se puede alojar en cualquier servidor estático, sin proceso Node en producción. Configurar HTTPS, redirección del dominio alternativo hacia `https://fundacionpedrofranco.com`, página 404 y compresión Brotli/Gzip. Para los archivos con hash en `/_astro/`, usar `Cache-Control: public, max-age=31536000, immutable`; para HTML, permitir revalidación. No se ha desplegado el sitio.
+La salida desplegable está en `dist/`. Vercel puede servir el sitio estático y la función `api/contact.ts` en el mismo despliegue. Configurar HTTPS, redirección del dominio alternativo hacia `https://fundacionpedrofranco.com`, página 404 y compresión Brotli/Gzip. Para los archivos con hash en `/_astro/`, usar `Cache-Control: public, max-age=31536000, immutable`; para HTML, permitir revalidación.
 
 ## SEO y rendimiento
 
@@ -45,12 +45,16 @@ La salida desplegable está en `dist/`. Se puede alojar en cualquier servidor es
 - Fuentes variables locales con `font-display: swap` y precarga de los dos archivos latinos principales.
 - Imágenes WebP generadas por Astro, variantes responsive, dimensiones explícitas, carga diferida y prioridad para la imagen principal.
 - CSS compilado con Tailwind 4. Sin Tailwind CDN, scripts de terceros, frameworks hidratados ni conexiones a Google durante la navegación.
-- JavaScript únicamente para filtros y preparación del correo; toda la información y navegación básica funcionan sin JavaScript.
+- JavaScript únicamente para filtros y el envío protegido del formulario; toda la información y navegación básica funcionan sin JavaScript.
 - Se preservan colores y jerarquía de Stitch, con ajustes de contraste, espaciado responsive y foco de teclado.
 
 ## Contacto y documentos
 
-El formulario **prepara un correo** dirigido a `fundacionpedrofranco@gmail.com`; la persona debe enviarlo desde su aplicación de correo. No hay backend de recepción, almacenamiento ni confirmación de entrega. Si no hay cliente de correo configurado, permanece visible la dirección y el contenido del formulario.
+El formulario envía solicitudes mediante `POST /api/contact` y las remite como correo transaccional con Resend. No guarda las solicitudes en una base de datos. Para iniciar sin configurar DNS usa el remitente de pruebas `Fundación Pedro Franco <onboarding@resend.dev>`; el correo de quien consulta se usa exclusivamente como `Reply-To`.
+
+Antes de desplegar, copiar `.env.example` a `.env` para desarrollo y registrar las mismas variables en **Vercel → Project Settings → Environment Variables**. `RESEND_API_KEY` se mantiene privada. El formulario incluye un honeypot básico, pero no CAPTCHA ni limitación externa: revisar los registros de Resend si aparece spam. Para salir del modo de pruebas se verifica el dominio en Resend y se cambia la constante `resendFrom` de `api/contact.ts` por un remitente propio.
+
+Durante el desarrollo, `npm run dev` sirve solo Astro; para ejecutar también la función `api/contact.ts` se debe usar `vercel dev` con las variables locales configuradas.
 
 Stitch incluía descargas simuladas con `alert()` y confirmaciones de envío mediante temporizador. Se reemplazaron por solicitudes de documentos vía correo y mensajes veraces. Cuando estén disponibles los PDF oficiales, se deben añadir a `public/documentos/` y reemplazar los enlaces de solicitud en `src/pages/transparencia.astro`. La calificación RTE se presenta como un trámite en curso.
 
