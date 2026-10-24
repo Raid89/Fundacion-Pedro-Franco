@@ -9,7 +9,7 @@ type ContactPayload = {
 const json = (body: object, status = 200) => Response.json(body, { status });
 const text = (value: unknown) => typeof value === 'string' ? value.trim() : '';
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const resendFrom = 'Fundación Pedro Franco <onboarding@resend.dev>';
+const resendFrom = 'Fundación Pedro Franco <contacto@fundacionpedrofranco.site>';
 
 export default {
   async fetch(request: Request) {
@@ -72,7 +72,8 @@ export default {
         signal: AbortSignal.timeout(8_000),
       });
       if (!sent.ok) {
-        console.error('Resend rejected contact email.', sent.status);
+        const detail = (await sent.text()).slice(0, 1_000);
+        console.error('Resend rejected contact email.', { status: sent.status, detail });
         return json({ error: 'No fue posible enviar la solicitud. Inténtalo nuevamente.' }, 502);
       }
     } catch (error) {

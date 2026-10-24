@@ -50,11 +50,11 @@ La salida desplegable está en `dist/`. Vercel puede servir el sitio estático y
 
 ## Contacto y documentos
 
-El formulario envía solicitudes mediante `POST /api/contact` y las remite como correo transaccional con Resend. No guarda las solicitudes en una base de datos. Para iniciar sin configurar DNS usa el remitente de pruebas `Fundación Pedro Franco <onboarding@resend.dev>`; el correo de quien consulta se usa exclusivamente como `Reply-To`.
+El formulario envía solicitudes mediante `POST /api/contact` y las remite como correo transaccional con Resend. No guarda las solicitudes en una base de datos. El remitente es `Fundación Pedro Franco <contacto@fundacionpedrofranco.site>` y el correo de quien consulta se usa exclusivamente como `Reply-To`.
 
-Antes de desplegar, copiar `.env.example` a `.env` para desarrollo y registrar las mismas variables en **Vercel → Project Settings → Environment Variables**. `RESEND_API_KEY` se mantiene privada. El formulario incluye un honeypot básico, pero no CAPTCHA ni limitación externa: revisar los registros de Resend si aparece spam. Para salir del modo de pruebas se verifica el dominio en Resend y se cambia la constante `resendFrom` de `api/contact.ts` por un remitente propio.
+Antes de desplegar, copiar `.env.example` a `.env` para desarrollo y registrar las mismas variables en **Vercel → Project Settings → Environment Variables**. `RESEND_API_KEY` se mantiene privada. El dominio `fundacionpedrofranco.site` debe permanecer verificado en Resend para autorizar el remitente configurado. El formulario incluye un honeypot básico, pero no CAPTCHA ni limitación externa: revisar los registros de Resend si aparece spam.
 
-Durante el desarrollo, `npm run dev` sirve solo Astro; para ejecutar también la función `api/contact.ts` se debe usar `vercel dev` con las variables locales configuradas.
+Durante el desarrollo, `npm run dev` sirve solo Astro y por eso `/api/contact` devuelve 404. Para ejecutar también la función `api/contact.ts`, usar `npm run dev:vercel` con las variables locales configuradas. El primer uso de `npx` puede solicitar inicio de sesión con la cuenta de Vercel del proyecto.
 
 Stitch incluía descargas simuladas con `alert()` y confirmaciones de envío mediante temporizador. Se reemplazaron por solicitudes de documentos vía correo y mensajes veraces. Cuando estén disponibles los PDF oficiales, se deben añadir a `public/documentos/` y reemplazar los enlaces de solicitud en `src/pages/transparencia.astro`. La calificación RTE se presenta como un trámite en curso.
 
