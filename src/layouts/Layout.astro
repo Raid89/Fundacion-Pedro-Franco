@@ -1,0 +1,61 @@
+---
+import '@fontsource-variable/playfair-display';
+import '@fontsource-variable/playfair-display/wght-italic.css';
+import '@fontsource-variable/plus-jakarta-sans';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileNav from '../components/MobileNav.astro';
+import headingFont from '@fontsource-variable/playfair-display/files/playfair-display-latin-wght-normal.woff2?url';
+import bodyFont from '@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2?url';
+import italicFont from '@fontsource-variable/playfair-display/files/playfair-display-latin-wght-italic.woff2?url';
+interface Props { title: string; description: string; label?: string; noindex?: boolean; }
+const { title, description, label = title, noindex = false } = Astro.props;
+const fullTitle = `${title} | Fundación Pedro Franco`;
+const site = Astro.site!;
+const canonical = new URL(Astro.url.pathname, site);
+const shareImage = new URL('/og-cover.jpg', site);
+const schema = { '@context': 'https://schema.org', '@graph': [
+  { '@type': 'Organization', '@id': new URL('/#organizacion', site).href, name: 'Fundación Pedro Franco', url: site.href, email: 'fundacionpedrofranco@gmail.com', logo: new URL('/favicon.svg', site).href, address: { '@type': 'PostalAddress', addressLocality: 'Medellín', addressRegion: 'Antioquia', addressCountry: 'CO' } },
+  { '@type': 'WebSite', '@id': new URL('/#sitio', site).href, url: site.href, name: 'Fundación Pedro Franco', inLanguage: 'es-CO', publisher: {'@id': new URL('/#organizacion', site).href} },
+  { '@type': 'WebPage', '@id': canonical.href, url: canonical.href, name: fullTitle, description, inLanguage: 'es-CO', isPartOf: {'@id': new URL('/#sitio', site).href} },
+]};
+---
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#06291d" />
+  <link rel="preload" href={headingFont} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={bodyFont} as="font" type="font/woff2" crossorigin />
+  {['/', '/nuestra-mision/'].includes(Astro.url.pathname) && <link rel="preload" href={italicFont} as="font" type="font/woff2" crossorigin />}
+  <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:site_name" content="Fundación Pedro Franco" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={shareImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Gato rescatado en recuperación, Fundación Pedro Franco" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={shareImage} />
+  <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <Header label={label} />
+  <slot />
+  <Footer />
+  <MobileNav />
+</body>
+</html>

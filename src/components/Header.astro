@@ -1,0 +1,12 @@
+---
+const { label } = Astro.props;
+const links = [{ href: '/', label: 'Inicio' }, { href: '/nuestra-mision/', label: 'Nuestra Misión' }, { href: '/transparencia/', label: 'Transparencia & DIAN' }, { href: '/proyectos-contacto/#proyectos', label: 'Proyectos Futuros' }, { href: '/proyectos-contacto/#contacto', label: 'Contacto Institucional' }];
+---
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="brand"><span class="brand-mark material-symbols-outlined" aria-hidden="true">pets</span><span><strong>Fundación Pedro Franco</strong><small class="desktop-tagline">Bienestar, rescate y protección felina</small><small class="mobile-tagline">{label}</small></span></a>
+    <span class="esal-badge">ESAL · Medellín</span>
+    <nav class="desktop-nav" aria-label="Navegación principal">{links.map(link => <a href={link.href} aria-current={Astro.url.pathname === link.href ? 'page' : undefined}>{link.label}</a>)}</nav>
+    <a class="help-button" href="/proyectos-contacto/#contacto"><span class="material-symbols-outlined" aria-hidden="true">favorite</span><span class="help-label">Vincularse / Ayudar</span><span class="sr-only">Contactar a la fundación</span></a>
+  </div>
+</header>

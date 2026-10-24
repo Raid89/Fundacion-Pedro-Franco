@@ -1,0 +1,10 @@
+---
+const links = [
+  ['/', 'home', 'Inicio'],
+  ['/nuestra-mision/', 'volunteer_activism', 'Misión'],
+  ['/transparencia/', 'gavel', 'DIAN'],
+  ['/proyectos-contacto/#proyectos', 'storefront', 'Proyectos'],
+  ['/proyectos-contacto/#gobernanza', 'shield', 'Legal'],
+];
+---
+<nav class="mobile-nav" aria-label="Navegación móvil">{links.map(([href, icon, text]) => <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}><span class="material-symbols-outlined" aria-hidden="true">{icon}</span><span>{text}</span></a>)}</nav>

@@ -1,0 +1,455 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#ecf6f1", "on-tertiary-fixed": "#370e00", "surface-container": "#e6f0eb", "on-error": "#ffffff", "on-primary-container": "#87aa99", "surface-container-high": "#e0eae5", "on-secondary-fixed-variant": "#204f3c", "tertiary-fixed": "#ffdbce", "inverse-on-surface": "#e9f3ee", "secondary-fixed-dim": "#a0d1b8", "outline": "#727974", "outline-variant": "#c1c8c3", "on-secondary-fixed": "#002115", "surface": "#f2fcf6", "inverse-surface": "#29322f", "primary-container": "#1e3f32", "error-container": "#ffdad6", "on-background": "#141d1b", "secondary-fixed": "#bbeed3", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "surface-variant": "#dbe5e0", "tertiary": "#431400", "tertiary-container": "#672200", "surface-dim": "#d2dcd7", "secondary": "#396752", "tertiary-fixed-dim": "#ffb598", "on-secondary-container": "#3f6e58", "surface-tint": "#446557", "secondary-container": "#bbeed3", "on-primary": "#ffffff", "background": "#f2fcf6", "primary-fixed-dim": "#aacfbd", "inverse-primary": "#aacfbd", "on-surface-variant": "#414844", "on-surface": "#141d1b", "surface-bright": "#f2fcf6", "on-tertiary-container": "#f28456", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "primary": "#06291d", "on-primary-fixed-variant": "#2c4d40", "error": "#ba1a1a", "on-primary-fixed": "#002116", "surface-container-highest": "#dbe5e0", "on-tertiary-fixed-variant": "#7d2d03", "primary-fixed": "#c6ebd8" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "margin-mobile": "1.25rem", "gutter-mobile": "1rem", "margin-tablet": "2rem", "space-sm": "0.5rem", "margin": "3rem", "space-xl": "2.5rem", "space-md": "1rem", "space-lg": "1.5rem", "gutter": "1.5rem" }, "fontFamily": { "label-statutory": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "headline-sm": [ "Playfair Display" ], "display-lg": [ "Playfair Display" ], "label-md": [ "Plus Jakarta Sans" ], "title-lg": [ "Plus Jakarta Sans" ], "title-md": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Playfair Display" ], "headline-md": [ "Playfair Display" ], "body-lg": [ "Plus Jakarta Sans" ], "display-lg-mobile": [ "Playfair Display" ], "headline-lg": [ "Playfair Display" ] }, "fontSize": { "label-statutory": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" } ], "body-md": [ "15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" } ], "body-sm": [ "13px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" } ], "headline-sm": [ "22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "600" } ], "display-lg": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "title-lg": [ "18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" } ], "title-md": [ "16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-md": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "body-lg": [ "18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" } ], "display-lg-mobile": [ "38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Logo Fundación Pedro Franco" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlFMzdmQNdAMckVxeYt3A2PimjsybbyJG3vQjKA3wOzfJcP3R7-6wIUbs5h9-qbp4rqhrpplcqhmbypE-VHFSU9Xxn_XnUvDPEwXD6qBNLlkNAlva0prj1rvaTQIfdDXBxXBC3hxqIcGf49hiqq9HOrwXOxaW5tIkt5VhZr4ImDcybwAurBE21PC2ui7EjwqRSI6WWxHkPmoIgoGpDm6A1-xw1JeNZ3mW1q1qVaIUE1MxBqT69GHxJ"><div class="flex flex-col min-w-0"><span class="font-title-md text-title-md text-primary truncate leading-tight">Fundación Pedro Franco</span><span class="font-label-statutory text-label-statutory text-secondary truncate uppercase tracking-wider">Mision Areas</span></div></div><div class="flex items-center gap-space-xs shrink-0"><a class="hidden min-[380px]:inline-flex items-center px-space-xs py-0.5 rounded bg-surface-container text-secondary font-label-statutory text-label-statutory" data-path="transparencia-dian" href="#"><span class="material-symbols-outlined text-[13px] mr-0.5">verified</span>ESAL</a><a class="min-h-[44px] min-w-[44px] px-space-sm rounded-lg bg-tertiary-container text-tertiary-fixed font-label-md text-label-md flex items-center justify-center gap-1 transition-colors" data-path="donaciones-urgentes" href="#"><span class="material-symbols-outlined text-[18px]">favorite</span><span class="hidden min-[420px]:inline">Donar</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Visual Header & Statutory Meritorious Statement -->
+<section class="relative px-margin-mobile pt-space-md pb-space-lg flex flex-col gap-space-sm overflow-hidden">
+<!-- Subtle Botanical Atmosphere Backdrop -->
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-surface-container-high/60 blur-2xl pointer-events-none"></div>
+<div class="absolute top-36 -left-16 w-44 h-44 rounded-full bg-secondary-container/30 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-xs">
+<div class="inline-flex items-center gap-space-xs self-start px-space-sm py-1 rounded-full bg-surface-container-high text-primary">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-label-statutory text-label-statutory uppercase tracking-wider">Actividad Meritoria Estatutaria</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Nuestra Misión y Labor con Gatos</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Salvaguarda rigurosa de fauna doméstica felina en condiciones de abandono crítico, enfermedad o vulnerabilidad extrema en el Valle de Aburrá, canalizada a través del amparo legal del Régimen Tributario Especial (ESAL).
+      </p>
+</div>
+<!-- Editorial Quote Card with Clinical Tone -->
+<div class="relative z-10 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span class="font-label-md text-label-md font-semibold">Compromiso Estatutario Permanente</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+        "Transformar el sufrimiento invisible en historias documentadas de dignidad, amparo veterinario y segundas oportunidades fundamentadas en la ética institucional."
+      </p>
+<div class="flex items-center justify-between pt-space-xs text-outline">
+<span class="font-label-statutory text-label-statutory">NIT: 902098987-7</span>
+<span class="font-label-statutory text-label-statutory">MEDELLÍN, ANTIOQUIA</span>
+</div>
+</div>
+</section>
+<!-- Section: Operational Differentiation Framework (Radical Transparency) -->
+<section class="px-margin-mobile py-space-sm">
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<h2 class="font-title-md text-title-md text-primary font-bold">Marco de Diferenciación Operativa</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Como ESAL comprometida con la transparencia pública y la DIAN, diferenciamos con estricta veracidad lo que ejecutamos hoy en campo frente a nuestras proyecciones institucionales autorizadas por estatutos.
+      </p>
+<div class="grid grid-cols-1 gap-space-xs pt-space-xs">
+<!-- Legend 1: Active Program -->
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex items-start gap-space-sm">
+<div class="w-3 h-3 rounded-full bg-secondary shrink-0 mt-1.5 flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low text-primary font-label-statutory text-label-statutory">
+                PROGRAMA ACTIVO
+              </span>
+<span class="font-label-md text-label-md text-primary font-semibold">Operación Vigente</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Protocolos en despliegue diario sostenidos por donaciones y hogares de acogida certificados.
+            </p>
+</div>
+</div>
+<!-- Legend 2: Statutory / Planned -->
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex items-start gap-space-sm">
+<div class="w-3 h-3 rounded-full bg-tertiary-container shrink-0 mt-1.5 flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-statutory text-label-statutory">
+                ESTATUTARIAMENTE PREVISTO
+              </span>
+<span class="font-label-md text-label-md text-tertiary font-semibold">En Proceso / Apertura</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Áreas amparadas por objeto social que requieren metas de financiamiento o convocatorias programadas.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Filter Tabs -->
+<section class="px-margin-mobile pt-space-md pb-space-xs">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-statutory text-label-statutory text-secondary uppercase tracking-wider">Líneas de Acción Misional</span>
+<span class="font-label-statutory text-label-statutory text-outline">7 Ejes Clave</span>
+</div>
+<div class="flex gap-space-xs overflow-x-auto pb-1 -mx-margin-mobile px-margin-mobile" id="filter-container">
+<button class="filter-chip px-space-md py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap transition-colors shadow-sm" id="btn-all" onclick="filterAreas('all')">
+        Todos (7)
+      </button>
+<button class="filter-chip px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors" id="btn-active" onclick="filterAreas('active')">
+        Activos Hoy (5)
+      </button>
+<button class="filter-chip px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors" id="btn-planned" onclick="filterAreas('planned')">
+        Estatutarios (2)
+      </button>
+</div>
+</section>
+<!-- Section: The 7 Work Areas Cards -->
+<section class="px-margin-mobile py-space-sm flex flex-col gap-space-md" id="areas-container">
+<!-- 1. Rescate de gatos vulnerables -->
+<article class="area-card active bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">emergency</span>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-statutory text-label-statutory flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          PROGRAMA ACTIVO
+        </span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-statutory text-label-statutory text-secondary">EJE 01 · GESTIÓN DE CRISIS</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Rescate de Gatos Vulnerables</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Foco prioritario en casos de alta vulnerabilidad médica, camadas desprotegidas o abandono severo en el Valle de Aburrá. Actuamos bajo red de triaje ético para asegurar que cada vida intervenida tenga cupo real de recuperación.
+      </p>
+<!-- Photo Asset Embed -->
+<div class="w-full h-44 rounded-lg overflow-hidden relative shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Close-up emotional documentary portrait of a rescued calico cat recovering in a warm, clean rehabilitation recovery sanctuary in Medellin, natural daylight, soft focus green foliage in background, dignified veterinary rescue tone, cinematic warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBYFXyqLvX-NhvkhTV5bqqbonqkHRWAdB8q9PZUVlErC4J2rCdZTP34piD7X3QSsF7a4pRsHsG8s1INFIPlphoi5xGfXMC_cFB5H-yfEYu5W6FCY8qjINVmsjr5-gqFj8ivt9OBknfnkKkZHY7Q1c5YwRx-PUANVlZxlhK9UzR3TXeWhwkpHLdkHIsbp8wjwK0uJZSkR5ce3uRe_uVPEykTASGtaBJTmamMJt0zhk_awVas2ZaxhFk">
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface font-label-statutory text-label-statutory backdrop-blur-sm">
+          Triaje Clínico Directo
+        </div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between text-secondary">
+<span class="font-body-sm text-body-sm font-semibold">Estado de Cobertura:</span>
+<span class="font-label-md text-label-md text-primary font-bold">Activo bajo red de respuesta</span>
+</div>
+</article>
+<!-- 2. Atención y rehabilitación veterinaria -->
+<article class="area-card active bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">healing</span>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-statutory text-label-statutory flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          PROGRAMA ACTIVO
+        </span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-statutory text-label-statutory text-secondary">EJE 02 · SALUD CLÍNICA</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Atención y Rehabilitación Veterinaria</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Diagnóstico serológico de FIV/FeLV, desparasitación interna y externa, cirugías reconstructivas, planes de vacunación y recuperación etológica para restituir la confianza del felino.
+      </p>
+<!-- Veterinary Metrics Micro-Strip -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-statutory text-label-statutory text-outline">PROTOCOLO MÉDICO</span>
+<span class="font-title-md text-title-md text-primary font-bold">100% Testeados</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Triple felina y serología</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-statutory text-label-statutory text-outline">RED DE APOYO</span>
+<span class="font-title-md text-title-md text-primary font-bold">Aliados 24/7</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Clínicas especializadas</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between text-secondary">
+<span class="font-body-sm text-body-sm font-semibold">Estado de Red:</span>
+<span class="font-label-md text-label-md text-primary font-bold">Activo con clínicas aliadas</span>
+</div>
+</article>
+<!-- 3. Adopciones responsables -->
+<article class="area-card active bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-statutory text-label-statutory flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          PROGRAMA ACTIVO
+        </span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-statutory text-label-statutory text-secondary">EJE 03 · RESTITUCIÓN DE HOGAR</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Adopciones Responsables</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        No realizamos entregas espontáneas. Implementamos formularios minuciosos, verificación de mallas de seguridad en balcones y ventanas, entrevistas familiares y seguimiento legal post-adopción mediante contrato.
+      </p>
+<!-- Steps Mini Flow -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-space-xs">
+<span class="font-label-statutory text-label-statutory text-outline">ESTÁNDAR DE COLOCACIÓN</span>
+<div class="flex items-center justify-between text-center gap-1">
+<div class="flex-1 py-1 rounded bg-surface-container text-primary font-label-md text-label-md">Entrevista</div>
+<span class="text-outline text-xs">→</span>
+<div class="flex-1 py-1 rounded bg-surface-container text-primary font-label-md text-label-md">Mallas</div>
+<span class="text-outline text-xs">→</span>
+<div class="flex-1 py-1 rounded bg-surface-container text-primary font-label-md text-label-md">Contrato</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between text-secondary">
+<span class="font-body-sm text-body-sm font-semibold">Garantía Ética:</span>
+<span class="font-label-md text-label-md text-primary font-bold">Activo con trazabilidad continua</span>
+</div>
+</article>
+<!-- 4. Esterilización y prevención -->
+<article class="area-card planned bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[24px]">content_cut</span>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-statutory text-label-statutory flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+          ESTATUTARIAMENTE PREVISTO
+        </span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-statutory text-label-statutory text-on-tertiary-container">EJE 04 · CONTROL POBLACIONAL ÉTICO</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Esterilización y Prevención</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        La única solución humanitaria duradera al dolor del abandono. Este eje contempla brigadas zonales masivas en estratos vulnerables del Valle de Aburrá para frenar la proliferación y el maltrato cíclico.
+      </p>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Proyección Campaña Zonal 2025</span>
+<span class="font-label-statutory text-label-statutory text-tertiary-container font-bold">FASE DE FONDEO</span>
+</div>
+<!-- Simple CSS Progress Bar -->
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 42%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Meta: Fondos para 150 procedimientos en comunas periféricas.</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between text-secondary">
+<span class="font-body-sm text-body-sm font-semibold">Estado de Programa:</span>
+<span class="font-label-md text-label-md text-tertiary font-bold">En campañas programadas</span>
+</div>
+</article>
+<!-- 5. Red de hogares de paso y voluntariado -->
+<article class="area-card active bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">diversity_3</span>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-statutory text-label-statutory flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          PROGRAMA ACTIVO
+        </span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-statutory text-label-statutory text-secondary">EJE 05 · CORAZÓN COMUNITARIO</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Red de Hogares de Paso y Voluntariado</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        La alternativa ética al hacinamiento en refugios tradicionales. Familias acogedoras en Medellín y el Valle de Aburrá brindan amor transitorio y socialización mientras la fundación asume todos los gastos médicos y de nutrición.
+      </p>
+<!-- Photo Asset Embed -->
+<div class="w-full h-44 rounded-lg overflow-hidden relative shadow-inner">
+<img class="w-full h-full object-cover" data-alt="A volunteer tenderly brushing an orange tabby kitten resting on a cozy knitted blanket inside a bright, clean apartment in Medellin, natural warm interior light, compassionate human-cat bond, quiet sanctuary atmosphere, high detail editorial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWomUIPBAXGLEQUw9LzYWVAs2L1VXexNA7P2EVpGJ-6ZPxG_51KeZ4bn1TQtm4twCc9ewTUeKwsyWuEp1u-llQAnMtsPkwOWU22nsqW3iu0rukDsuXGEbY5Q_1pkKrSh82HuvnNTrXBlqUjkxUcMYV7vWtwxM7G0_mAJtxpSTnp7dJuo3Fs-gN1OCnmN60NuqmXKFMLSy_KOX40ec6u6COJTSAJpNxnhMoko3vzXtzAC-nb7jb0art">
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface font-label-statutory text-label-statutory backdrop-blur-sm">
+          Medellín y Envigado
+        </div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between text-secondary">
+<span class="font-body-sm text-body-sm font-semibold">Estado de Convocatoria:</span>
+<span class="font-label-md text-label-md text-primary font-bold">Convocatoria permanente activa</span>
+</div>
+</article>
+<!-- 6. Educación sobre bienestar animal -->
+<article class="area-card active bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-statutory text-label-statutory flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          PROGRAMA ACTIVO
+        </span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-statutory text-label-statutory text-secondary">EJE 06 · TRANSFORMACIÓN CULTURAL</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Educación sobre Bienestar Animal</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Desmitificación de estigmas sobre gatos negros, mitos de toxoplasmosis en gestantes, tenencia indoor estricta y pedagogía ciudadana para prevenir la crueldad animal y el desamparo involuntario por desinformación.
+      </p>
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">menu_book</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Guías Digitales</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">podcasts</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Charlas Virtuales</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between text-secondary">
+<span class="font-body-sm text-body-sm font-semibold">Canales Actuales:</span>
+<span class="font-label-md text-label-md text-primary font-bold">Activo en canales digitales</span>
+</div>
+</article>
+<!-- 7. Protección de fauna doméstica -->
+<article class="area-card planned bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">policy</span>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high text-primary font-label-statutory text-label-statutory flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+          MARCO ESTATUTARIO
+        </span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-statutory text-label-statutory text-secondary">EJE 07 · INCIDENCIA JURÍDICA</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Protección Integral de Fauna Doméstica</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Defensa activa del principio de sintiencia animal reconocido por la Ley 1774 de 2016 en Colombia. Respaldamos denuncias ante inspecciones de policía y fiscalía (GELMA) frente a actos tipificados de abuso y negligencia.
+      </p>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between text-secondary">
+<span class="font-body-sm text-body-sm font-semibold">Naturaleza Jurídica:</span>
+<span class="font-label-md text-label-md text-primary font-bold">Actividad meritoria permanente</span>
+</div>
+</article>
+</section>
+<!-- Interactive Call-to-Action: Hogares de Paso & Voluntariado -->
+<section class="px-margin-mobile pt-space-lg pb-space-sm">
+<div class="bg-primary text-on-primary rounded-xl p-space-lg flex flex-col gap-space-md relative overflow-hidden shadow-md">
+<!-- Decorative Backdrop Element -->
+<div class="absolute -right-10 -bottom-10 w-36 h-36 rounded-full bg-white/5 pointer-events-none"></div>
+<div class="flex flex-col gap-space-xs">
+<div class="inline-flex items-center gap-space-xs self-start px-space-sm py-0.5 rounded-full bg-white/10 text-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">hevc</span>
+<span class="font-label-statutory text-label-statutory uppercase">El Alma del Rescate</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-primary font-semibold">
+          Conviértete en Hogar de Paso en Medellín
+        </h2>
+<p class="font-body-md text-body-md text-primary-fixed-dim">
+          No necesitas ser adoptante definitivo para salvar vidas. Un cuarto libre o un espacio tranquilo en tu hogar son suficientes para albergar temporalmente a un gato mientras se recupera.
+        </p>
+</div>
+<!-- Quick Requirements Grid -->
+<div class="bg-primary-container/80 rounded-lg p-space-md flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-secondary-fixed font-bold tracking-wide uppercase">
+          Requisitos Básicos Esenciales:
+        </span>
+<ul class="flex flex-col gap-1.5 font-body-sm text-body-sm text-on-primary">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Vivienda con ventanas seguras o malla anticongestión / antiescape.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Residencia en el Valle de Aburrá (Medellín, Envigado, Itagüí, Sabaneta, Bello).</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Tiempo diario para atención, aseo de arenero y medicación básica asistida.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Compromiso de entrega cuando el adoptante idóneo sea calificado.</span>
+</li>
+</ul>
+<div class="mt-space-xs pt-space-xs border-t border-white/10 flex items-center gap-space-xs text-primary-fixed-dim">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">paid</span>
+<span class="font-label-statutory text-label-statutory">La Fundación asume alimento medicado y 100% de gastos clínicos.</span>
+</div>
+</div>
+<!-- Direct Action Buttons -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<a class="w-full min-h-[48px] px-space-md rounded-lg bg-tertiary-container text-tertiary-fixed font-title-md text-title-md flex items-center justify-center gap-space-xs transition-colors shadow-sm" href="mailto:fundacionpedrofranco@gmail.com?subject=Postulaci%C3%B3n%20Hogar%20de%20Paso%20-%20Medell%C3%ADn&amp;body=Hola%20Fundaci%C3%B3n%20Pedro%20Franco,%20deseo%20postularme%20como%20Hogar%20de%20Paso%20temporal%20para%20un%20gatito%20en%20recuperaci%C3%B3n.%20Mi%20nombre%20es:%20...%20y%20vivo%20en%20el%20sector%20de:%20...">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+<span>Postularme como Hogar de Paso</span>
+</a>
+<button class="w-full min-h-[44px] px-space-md rounded-lg bg-surface-container-high/20 text-on-primary font-label-md text-label-md flex items-center justify-center gap-space-xs hover:bg-surface-container-high/30 transition-colors" id="btn-copy-email" onclick="copyEmailNotice()">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span id="copy-text">Copiar correo de contacto</span>
+</button>
+</div>
+<!-- Feedback Pill (Hidden by default) -->
+<div class="hidden self-center px-space-sm py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-statutory text-label-statutory text-center transition-all" id="copy-toast">
+        ¡fundacionpedrofranco@gmail.com copiado al portapapeles!
+      </div>
+</div>
+</section>
+<!-- Legal & DIAN Disclaimer Micro-Banner -->
+<section class="px-margin-mobile pt-space-md">
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">verified_user</span>
+<p class="font-label-statutory text-label-statutory text-on-surface-variant leading-relaxed">
+        Las actividades descritas son desarrolladas sin ánimo de lucro en estricto cumplimiento del Decreto 2150 de 2017 y las directrices de la Dirección de Impuestos y Aduanas Nacionales (DIAN) de Colombia para Entidades Sin Ánimo de Lucro (ESAL).
+      </p>
+</div>
+</section>
+<!-- Client-side Micro-Interactions Script -->
+<script>
+    function filterAreas(category) {
+      const cards = document.querySelectorAll('.area-card');
+      const buttons = document.querySelectorAll('.filter-chip');
+
+      // Reset all buttons styling
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary');
+        btn.classList.add('bg-surface-container-high', 'text-on-surface');
+      });
+
+      // Highlight active button
+      const activeBtn = document.getElementById('btn-' + category);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-surface-container-high', 'text-on-surface');
+        activeBtn.classList.add('bg-primary', 'text-on-primary');
+      }
+
+      // Filter cards
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.classList.remove('hidden');
+        } else if (category === 'active') {
+          if (card.classList.contains('active')) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        } else if (category === 'planned') {
+          if (card.classList.contains('planned')) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    function copyEmailNotice() {
+      const email = 'fundacionpedrofranco@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        const toast = document.getElementById('copy-toast');
+        const copyText = document.getElementById('copy-text');
+        if (toast && copyText) {
+          toast.classList.remove('hidden');
+          copyText.textContent = '¡Copiado con éxito!';
+          setTimeout(() => {
+            toast.classList.add('hidden');
+            copyText.textContent = 'Copiar correo de contacto';
+          }, 3500);
+        }
+      }).catch(err => {
+        // Fallback for older webviews
+        const toast = document.getElementById('copy-toast');
+        if (toast) {
+          toast.textContent = 'Escribe a: ' + email;
+          toast.classList.remove('hidden');
+        }
+      });
+    }
+  </script>
+</div><footer class="w-full bg-surface-container-low px-margin-mobile pt-space-lg pb-space-xl mt-space-xl rounded-t-xl"><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[20px]">pets</span><span class="font-title-md text-title-md text-primary font-semibold">Fundación Pedro Franco</span></div><p class="font-label-statutory text-label-statutory text-secondary font-bold">NIT: 902098987-7 · Régimen Tributario Especial (ESAL)</p><p class="font-body-sm text-body-sm text-on-surface-variant">Medellín - Colombia · Valle de Aburrá</p><p class="font-body-sm text-body-sm text-on-surface-variant break-all"><span class="material-symbols-outlined text-[14px] align-middle mr-1 text-primary">mail</span>fundacionpedrofranco@gmail.com</p><p class="font-label-md text-label-md text-outline mt-space-xs">Compromiso ético con la rehabilitación y protección felina.</p></div></footer></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] w-full text-on-surface-variant transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-md text-label-md mt-0.5">Inicio</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] w-full transition-colors text-primary font-bold" data-path="mision-areas" href="#"><span class="material-symbols-outlined text-[22px]">volunteer_activism</span><span class="font-label-md text-label-md mt-0.5">Misión</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] w-full text-on-surface-variant transition-colors" data-path="transparencia-dian" href="#"><span class="material-symbols-outlined text-[22px]">gavel</span><span class="font-label-md text-label-md mt-0.5">DIAN</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] w-full text-on-surface-variant transition-colors" data-path="proyectos-cat-cafe" href="#"><span class="material-symbols-outlined text-[22px]">local_cafe</span><span class="font-label-md text-label-md mt-0.5">Proyectos</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] w-full text-on-surface-variant transition-colors" data-path="contacto-legal" href="#"><span class="material-symbols-outlined text-[22px]">policy</span><span class="font-label-md text-label-md mt-0.5">Legal</span></a></div></nav></body></html>

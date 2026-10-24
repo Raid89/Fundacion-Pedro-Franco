@@ -1,0 +1,20 @@
+[
+  {
+    "route": "index",
+    "index": 0,
+    "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBpziHNlAseawX2uV_RtoUf0arP5iEL9CUZGtHiHJiEkoTBS7cPTM1pJyviblpf5-UN2BR7kCLM9uz19I9-09fn8oyVZxtZBa7zza4Z98Joh_2sMTsYlXgk6mAA2z8asXs_7z1bKDeI8vMmy4wr_Ko9JBTgm2hS16wGgaVeWRWpR9IZil2eUDWgh5FMAkS8oZ_Sz02RZmXhGP2F72F1iDgCfRm-PEDJYPsFVpqostLMuuOzZGkHXqaM",
+    "file": "src/assets/index-mobile-0.jpg"
+  },
+  {
+    "route": "nuestra-mision",
+    "index": 0,
+    "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBBYFXyqLvX-NhvkhTV5bqqbonqkHRWAdB8q9PZUVlErC4J2rCdZTP34piD7X3QSsF7a4pRsHsG8s1INFIPlphoi5xGfXMC_cFB5H-yfEYu5W6FCY8qjINVmsjr5-gqFj8ivt9OBknfnkKkZHY7Q1c5YwRx-PUANVlZxlhK9UzR3TXeWhwkpHLdkHIsbp8wjwK0uJZSkR5ce3uRe_uVPEykTASGtaBJTmamMJt0zhk_awVas2ZaxhFk",
+    "file": "src/assets/nuestra-mision-mobile-0.jpg"
+  },
+  {
+    "route": "nuestra-mision",
+    "index": 1,
+    "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuAWomUIPBAXGLEQUw9LzYWVAs2L1VXexNA7P2EVpGJ-6ZPxG_51KeZ4bn1TQtm4twCc9ewTUeKwsyWuEp1u-llQAnMtsPkwOWU22nsqW3iu0rukDsuXGEbY5Q_1pkKrSh82HuvnNTrXBlqUjkxUcMYV7vWtwxM7G0_mAJtxpSTnp7dJuo3Fs-gN1OCnmN60NuqmXKFMLSy_KOX40ec6u6COJTSAJpNxnhMoko3vzXtzAC-nb7jb0art",
+    "file": "src/assets/nuestra-mision-mobile-1.jpg"
+  }
+]
